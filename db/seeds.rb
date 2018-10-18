@@ -29,5 +29,5 @@ end
 
 ### Recompanies
 3.times do |i|
-  Recompany.create!(name: "Inmobilia #{i+1}", email:"inmobilia#{i+1}@gmail.com", password: 'topsecret', password_confirmation: 'topsecret')
+  Recompany.create!(name: "Inmobilia #{i+1}", email:"inmobilia#{i+1}@gmail.com", password: 'topsecret', password_confirmation: 'topsecret'0)
 end

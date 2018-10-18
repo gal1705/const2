@@ -7,4 +7,8 @@ class RecompaniesController < ApplicationController
       @companies = Recompany.where(category_id: @category_id).order("created_at ASC")
     end
   end
+
+  def show
+  	@projects = Project.where(recompany_id: params[:id]).order("created_at ASC")
+  end
 end
