@@ -1,0 +1,152 @@
+<%= form_with(model: project, local: true) do |form| %>
+  <% if project.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</h2>
+
+      <ul>
+      <% project.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :role %>
+    <%= form.number_field :role %>
+  </div>
+
+  <div class="field">
+    <%= form.label :project_address %>
+    <%= form.text_field :project_address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :showroom_address %>
+    <%= form.text_field :showroom_address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :showroom_telephone %>
+    <%= form.text_field :showroom_telephone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :opening_hours %>
+    <%= form.text_field :opening_hours %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :characteristics %>
+    <%= form.text_area :characteristics %>
+  </div>
+
+  <div class="field">
+    <%= form.label :barbecue_area %>
+    <%= form.check_box :barbecue_area %>
+  </div>
+
+  <div class="field">
+    <%= form.label :gym %>
+    <%= form.check_box :gym %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pool %>
+    <%= form.check_box :pool %>
+  </div>
+
+  <div class="field">
+    <%= form.label :multipurpose_room %>
+    <%= form.check_box :multipurpose_room %>
+  </div>
+
+  <div class="field">
+    <%= form.label :laundry_room %>
+    <%= form.check_box :laundry_room %>
+  </div>
+
+  <div class="field">
+    <%= form.label :controlled_access %>
+    <%= form.check_box :controlled_access %>
+  </div>
+
+  <div class="field">
+    <%= form.label :visitors_parking %>
+    <%= form.check_box :visitors_parking %>
+  </div>
+
+  <div class="field">
+    <%= form.label :play_area %>
+    <%= form.check_box :play_area %>
+  </div>
+
+  <div class="field">
+    <%= form.label :club_house %>
+    <%= form.check_box :club_house %>
+  </div>
+
+  <div class="field">
+    <%= form.label :games_room %>
+    <%= form.check_box :games_room %>
+  </div>
+
+  <div class="field">
+    <%= form.label :green_areas %>
+    <%= form.check_box :green_areas %>
+  </div>
+
+  <div class="field">
+    <%= form.label :bike_parking %>
+    <%= form.check_box :bike_parking %>
+  </div>
+
+  <div class="field">
+    <%= form.label :parking %>
+    <%= form.check_box :parking %>
+  </div>
+
+  <div class="field">
+    <%= form.label :warehouses %>
+    <%= form.check_box :warehouses %>
+  </div>
+
+  <div class="field">
+    <%= form.label :arch_finishes %>
+    <%= form.text_area :arch_finishes %>
+  </div>
+
+  <div class="field">
+    <%= form.label :inmediate_availability %>
+    <%= form.check_box :inmediate_availability %>
+  </div>
+
+  <div class="field">
+    <%= form.label :availability_date %>
+    <%= form.date_select :availability_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :number_of_buildings %>
+    <%= form.number_field :number_of_buildings %>
+  </div>
+
+  <div class="field">
+    <%= form.label :number_of_floors %>
+    <%= form.number_field :number_of_floors %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

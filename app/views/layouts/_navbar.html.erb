@@ -1,230 +1,42 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
-  <a class="navbar-brand" href="#">Mega Dropdown</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+  <div class="navbar-brand">Construcción</div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="#">Category</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Category 1
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-md-4">
-                <span class="text-uppercase text-white">Category 1</span>
-                <ul class="nav flex-column">
-                <li class="nav-item">
-                  <a class="nav-link active" href="#">Active</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Link item</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Link item</a>
-                </li>
-              </ul>
-              </div>
-              <!-- /.col-md-4  -->
-              <div class="col-md-4">
-                <ul class="nav flex-column">
-                <li class="nav-item">
-                  <a class="nav-link active" href="#">Active</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Link item</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Link item</a>
-                </li>
-              </ul>
-              </div>
-              <!-- /.col-md-4  -->
-              <div class="col-md-4">
-                <a href="">
-                  <img src="https://dummyimage.com/200x100/ccc/000&text=image+link" alt="" class="img-fluid">
-                </a>
-                <p class="text-white">Short image call to action</p>
-
-              </div>
-              <!-- /.col-md-4  -->
-            </div>
-          </div>
-          <!--  /.container  -->
-
-
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item  active dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Empresas</a>
+          <div class="dropdown-menu dropdown-menu-left" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="<%= recompanies_path %>">Inmobiliarias</a>
+            <a class="dropdown-item" href="<%= companies_path(category: 'Constructoras') %>">Constructoras</a>
+            <a class="dropdown-item" href="<%= companies_path(category: 'Arquitectos') %>">Arquitectos</a>
+            <a class="dropdown-item" href="<%= companies_path(category: 'Ingenieros') %>">Ingenieros</a>
         </div>
       </li>
-      <li class="nav-item dropdown">
+      <li class="nav-item  active dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Category 2
+        <% if company_signed_in? || recompany_signed_in? %>
+          Cerrar Sesión
+        <% else %>
+          Acceso
+        <% end %>
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <% if company_signed_in? %>
+            <a class="dropdown-item" href="<%= destroy_company_session_path %>" data-method="DELETE">Salir (Company)</a>
+          <% elsif recompany_signed_in? %>
+            <a class="dropdown-item" href="<%= destroy_recompany_session_path %>" data-method="DELETE">Salir (recompany)</a>
 
-
-          <div class="container">
-            <div class="row">
-              <div class="col-md-4">
-                <span class="text-uppercase text-white">Category 2</span>
-                <ul class="nav flex-column">
-                <li class="nav-item">
-                  <a class="nav-link active" href="#">Active</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Link item</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Link item</a>
-                </li>
-              </ul>
-              </div>
-              <!-- /.col-md-4  -->
-              <div class="col-md-4">
-                <ul class="nav flex-column">
-                <li class="nav-item">
-                  <a class="nav-link active" href="#">Active</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Link item</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Link item</a>
-                </li>
-              </ul>
-              </div>
-              <!-- /.col-md-4  -->
-              <div class="col-md-4">
-                <a href="">
-                  <img src="https://dummyimage.com/200x100/ccc/000&text=image+link" alt="" class="img-fluid">
-                </a>
-                <p class="text-white">Short image call to action</p>
-
-              </div>
-              <!-- /.col-md-4  -->
-            </div>
-          </div>
-          <!--  /.container  -->
-
-
+          <% else %>
+            <a class="dropdown-item" href="<%= new_recompany_session_path %>">Ingreso Inmobiliarias</a>
+            <a class="dropdown-item" href="<%= new_recompany_registration_path %>">Registro Inmobiliarias</a>
+            <a class="dropdown-item" href="<%= new_company_session_path %>">Ingreso Empresas</a>
+            <a class="dropdown-item" href="<%= new_company_registration_path %>">Registro Empresas</a>
+          <% end %>
         </div>
       </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Empresas
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-
-
-          <div class="container">
-            <div class="row">
-              <div class="col-md-3">
-               <span class="text-uppercase text-white">Empresas</span>
-                <ul class="nav flex-column">
-                <li class="nav-item">
-                  <a class="nav-link active" href="#">Inmobiliarias</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link active" href="<%= companies_path(category: 'Constructoras') %>">Constructoras</a>
-                </li>
-                <!--
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Link item</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Link item</a>
-                </li>
-              -->
-              </ul>
-              </div>
-              <!-- /.col-md-4  -->
-
-              <!-- /.col-md-4  -->
-              <div class="col-md-3">
-                <ul class="nav flex-column">
-                <li class="nav-item">
-                  <a class="nav-link active" href="#">Especialistas Diseño y Gestión</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="<%= companies_path(category: 'Arquitectos') %>">Arquitectura</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="<%= companies_path(category: 'Ingenieros') %>">Ingeniería Estructural</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Mecánica de Suelos</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Topografía y Geomensura</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Inspección Técnica de Obras</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Coordinación de Proyectos</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Diseño de Proyectos de Especialidades</a>
-                </li>
-              </ul>
-              </div>
-              <!-- /.col-md-4  -->
-              <!-- /.col-md-4  -->
-              <div class="col-md-3">
-                <ul class="nav flex-column">
-                <li class="nav-item">
-                  <a class="nav-link active" href="#">Especialistas Construcción</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Arquitectura</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Ingeniería Estructural</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Mecánica de Suelos</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Topografía y Geomensura</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Inspección Técnica de Obras</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Coordinación de Proyectos</a>
-                </li>
-              </ul>
-              </div>
-              <!-- /.col-md-4  -->
-              <div class="col-md-3">
-
-                <a href="">
-                  <img src="https://dummyimage.com/200x100/ccc/000&text=image+link" alt="" class="img-fluid">
-                </a>
-                <p class="text-white">Short image call to action</p>
-                
-              </div>
-              <!-- /.col-md-4  -->
-            </div>
-          </div>
-          <!--  /.container  -->
-
-
-        </div>
-      </li>
-
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
-    </form>
   </div>
-
-
 </nav>

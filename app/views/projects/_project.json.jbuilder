@@ -1,0 +1,2 @@
+json.extract! project, :id, :name, :role, :project_address, :showroom_address, :showroom_telephone, :opening_hours, :description, :characteristics, :barbecue_area, :gym, :pool, :multipurpose_room, :laundry_room, :controlled_access, :visitors_parking, :play_area, :club_house, :games_room, :green_areas, :bike_parking, :parking, :warehouses, :arch_finishes, :inmediate_availability, :availability_date, :number_of_buildings, :number_of_floors, :recompany_id, :created_at, :updated_at
+json.url project_url(project, format: :json)

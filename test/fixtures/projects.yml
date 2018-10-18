@@ -1,0 +1,61 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  role: 1
+  project_address: MyString
+  showroom_address: MyString
+  showroom_telephone: MyString
+  opening_hours: MyString
+  description: MyText
+  characteristics: MyText
+  barbecue_area: false
+  gym: false
+  pool: false
+  multipurpose_room: false
+  laundry_room: false
+  controlled_access: false
+  visitors_parking: false
+  play_area: false
+  club_house: false
+  games_room: false
+  green_areas: false
+  bike_parking: false
+  parking: false
+  warehouses: false
+  arch_finishes: MyText
+  inmediate_availability: false
+  availability_date: 2018-10-17
+  number_of_buildings: 1
+  number_of_floors: 1
+  recompany: one
+
+two:
+  name: MyString
+  role: 1
+  project_address: MyString
+  showroom_address: MyString
+  showroom_telephone: MyString
+  opening_hours: MyString
+  description: MyText
+  characteristics: MyText
+  barbecue_area: false
+  gym: false
+  pool: false
+  multipurpose_room: false
+  laundry_room: false
+  controlled_access: false
+  visitors_parking: false
+  play_area: false
+  club_house: false
+  games_room: false
+  green_areas: false
+  bike_parking: false
+  parking: false
+  warehouses: false
+  arch_finishes: MyText
+  inmediate_availability: false
+  availability_date: 2018-10-17
+  number_of_buildings: 1
+  number_of_floors: 1
+  recompany: two

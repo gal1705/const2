@@ -1,0 +1,2 @@
+module RecompaniesHelper
+end
