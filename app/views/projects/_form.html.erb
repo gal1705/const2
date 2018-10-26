@@ -146,6 +146,34 @@
     <%= form.number_field :number_of_floors %>
   </div>
 
+<% i = 1 %>
+
+<%= form.fields_for :project_companies do |projectcompany_form| %>
+  
+  <% if i == 1 %>
+
+    <div class="field">
+    <%= projectcompany_form.label :Arquitecto %>
+    <%= projectcompany_form.select :company_id, Company.where(category_id: 1).order("created_at ASC").map{|cat| [cat.name, cat.id]} %>
+    </div>
+
+  <% elsif i == 2 %>
+    <div class="field">
+    <%= projectcompany_form.label :Ingeniero %>
+    <%= projectcompany_form.select :company_id, Company.where(category_id: 2).order("created_at ASC").map{|cat| [cat.name, cat.id]} %>
+    </div>
+    
+  <% else %>
+    <div class="field">
+    <%= projectcompany_form.label :Constructora %>
+    <%= projectcompany_form.select :company_id, Company.where(category_id: 3).order("created_at ASC").map{|cat| [cat.name, cat.id]} %>
+    </div>
+  <% end %>
+
+  <% i = i + 1 %>
+
+<% end %>
+
   <div class="actions">
     <%= form.submit %>
   </div>

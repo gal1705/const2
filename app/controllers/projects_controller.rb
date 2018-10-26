@@ -15,6 +15,7 @@ class ProjectsController < ApplicationController
   # GET /projects/new
   def new
     @project = Project.new
+    3.times { @project.project_companies.build }
   end
 
   # GET /projects/1/edit
@@ -70,6 +71,6 @@ class ProjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
-      params.require(:project).permit(:name, :role, :project_address, :showroom_address, :showroom_telephone, :opening_hours, :description, :characteristics, :barbecue_area, :gym, :pool, :multipurpose_room, :laundry_room, :controlled_access, :visitors_parking, :play_area, :club_house, :games_room, :green_areas, :bike_parking, :parking, :warehouses, :arch_finishes, :inmediate_availability, :availability_date, :number_of_buildings, :number_of_floors)
+      params.require(:project).permit(:name, :role, :project_address, :showroom_address, :showroom_telephone, :opening_hours, :description, :characteristics, :barbecue_area, :gym, :pool, :multipurpose_room, :laundry_room, :controlled_access, :visitors_parking, :play_area, :club_house, :games_room, :green_areas, :bike_parking, :parking, :warehouses, :arch_finishes, :inmediate_availability, :availability_date, :number_of_buildings, :number_of_floors, project_companies_attributes: [:company_id])
     end
 end

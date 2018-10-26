@@ -48,7 +48,7 @@ class Recompanies::RegistrationsController < Devise::RegistrationsController
     devise_parameter_sanitizer.permit(:sign_up,
     keys: [:name, :logo, :address, :telephone, :rut,
     :legal_name, :line_of_bussiness, :admin_name,
-    :admin_email, :admin_telephone]),
+    :admin_email, :admin_telephone])
   end    
   #   devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute])
   # end
