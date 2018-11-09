@@ -41,6 +41,13 @@
 </p>
 
 <p>
+  <strong>Main image:</strong>
+  <% if @project.main_image.url.present? %>
+  <%= image_tag @project.main_image.url %>
+  <% end %>
+</p>
+
+<p>
   <strong>Barbecue area:</strong>
   <%= @project.barbecue_area %>
 </p>
@@ -142,3 +149,5 @@
 
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>
+
+        <p><%= link_to 'Destroy', @project, method: :delete, data: { confirm: 'Are you sure?' } %></p>

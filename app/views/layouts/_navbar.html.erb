@@ -6,13 +6,16 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav ml-auto">
-        <li class="nav-item  active dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Empresas</a>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="<%= recompanies_path %>">Inmobiliarias</a>
-            <a class="dropdown-item" href="<%= companies_path(category: 'Constructoras') %>">Constructoras</a>
-            <a class="dropdown-item" href="<%= companies_path(category: 'Arquitectos') %>">Arquitectos</a>
-            <a class="dropdown-item" href="<%= companies_path(category: 'Ingenieros') %>">Ingenieros</a>
+      <li class="nav-item  active">
+        <a class="nav-link" href="<%= projects_path %>">Proyectos</a>
+      </li>
+      <li class="nav-item  active dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Empresas</a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="<%= recompanies_path %>">Inmobiliarias</a>
+          <a class="dropdown-item" href="<%= companies_path(category: 'Constructoras') %>">Constructoras</a>
+          <a class="dropdown-item" href="<%= companies_path(category: 'Arquitectos') %>">Arquitectos</a>
+          <a class="dropdown-item" href="<%= companies_path(category: 'Ingenieros') %>">Ingenieros</a>
         </div>
       </li>
       <li class="nav-item  active dropdown">

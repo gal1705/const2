@@ -13,3 +13,29 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  background-color: #F5F5F5; }
+
+.cardproject {
+	background-color: #F5F5F5;
+
+}
+
+.cardproject .container {
+	background-color: white;
+
+}
+
+.icon_gym {
+	height: 20px;
+	color: #007BF9;
+}
+
+.text-primary {
+  color: #007BF9 !important;
+}
+
+.mr-2 {
+  margin-right: 0.75rem !important;
+}

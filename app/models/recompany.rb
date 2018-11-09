@@ -4,4 +4,5 @@ class Recompany < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :projects
+  mount_uploader :logo, RecompaniesLogoUploader
 end

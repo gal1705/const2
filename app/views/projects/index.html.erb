@@ -1,81 +1,36 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Projects</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Role</th>
-      <th>Project address</th>
-      <th>Showroom address</th>
-      <th>Showroom telephone</th>
-      <th>Opening hours</th>
-      <th>Description</th>
-      <th>Characteristics</th>
-      <th>Barbecue area</th>
-      <th>Gym</th>
-      <th>Pool</th>
-      <th>Multipurpose room</th>
-      <th>Laundry room</th>
-      <th>Controlled access</th>
-      <th>Visitors parking</th>
-      <th>Play area</th>
-      <th>Club house</th>
-      <th>Games room</th>
-      <th>Green areas</th>
-      <th>Bike parking</th>
-      <th>Parking</th>
-      <th>Warehouses</th>
-      <th>Arch finishes</th>
-      <th>Inmediate availability</th>
-      <th>Availability date</th>
-      <th>Number of buildings</th>
-      <th>Number of floors</th>
-      <th>Recompany</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @projects.each do |project| %>
-      <tr>
-        <td><%= project.name %></td>
-        <td><%= project.role %></td>
-        <td><%= project.project_address %></td>
-        <td><%= project.showroom_address %></td>
-        <td><%= project.showroom_telephone %></td>
-        <td><%= project.opening_hours %></td>
-        <td><%= project.description %></td>
-        <td><%= project.characteristics %></td>
-        <td><%= project.barbecue_area %></td>
-        <td><%= project.gym %></td>
-        <td><%= project.pool %></td>
-        <td><%= project.multipurpose_room %></td>
-        <td><%= project.laundry_room %></td>
-        <td><%= project.controlled_access %></td>
-        <td><%= project.visitors_parking %></td>
-        <td><%= project.play_area %></td>
-        <td><%= project.club_house %></td>
-        <td><%= project.games_room %></td>
-        <td><%= project.green_areas %></td>
-        <td><%= project.bike_parking %></td>
-        <td><%= project.parking %></td>
-        <td><%= project.warehouses %></td>
-        <td><%= project.arch_finishes %></td>
-        <td><%= project.inmediate_availability %></td>
-        <td><%= project.availability_date %></td>
-        <td><%= project.number_of_buildings %></td>
-        <td><%= project.number_of_floors %></td>
-        <td><%= project.recompany.name %></td>
-        <td><%= link_to 'Show', project %></td>
-        <td><%= link_to 'Edit', edit_project_path(project) %></td>
-        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
 <br>
+<h1>Proyectos</h1>
+
+<% @projects.each do |project| %>
+
+  <div class="cardproject">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="p-0 col-lg-4 order-2 order-lg-1">
+          <% if project.main_image.url.present? %>
+          <%= image_tag project.main_image.url, size:"240x240", class:"img-fluid d-block" %>
+          <% else %>
+          <%= image_tag "http://placehold.it/640x480", class:"img-fluid d-block" %>
+          <% end %>
+        </div>
+        <div class="d-flex flex-column justify-content-center p-3 col-lg-6 order-1 order-lg-2">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><i class="fa text-primary mr-2 fa-bed"></i>1, 2 y 3 dormitorios</li>
+            <li class="list-group-item"><i class="fa text-primary mr-2 fa-arrows-alt"></i>36 m2 hasta 54 m2</li>
+            <li class="list-group-item"><i class="fa text-primary mr-2 fa-bus"></i>Excelente conectividad<br></li>
+            <li class="list-group-item"><i class="fa text-primary mr-2 fa-subway"></i>Cercano a metro</li>
+            <li class="list-group-item"><%= image_tag 'training1.svg', class:"icon_gym text-primary mr-2" %>Gimnasio</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br>
+
+<% end %>
 
 <%= link_to 'New Project', new_project_path %>
