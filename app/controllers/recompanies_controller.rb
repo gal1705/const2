@@ -10,5 +10,6 @@ class RecompaniesController < ApplicationController
 
   def show
   	@projects = Project.where(recompany_id: params[:id]).order("created_at ASC")
+    
   end
 end
