@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Redescriptions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>Ppal title</th>
+      <th>Ppal content</th>
+      <th>Second title</th>
+      <th>Second content</th>
+      <th>Terc title</th>
+      <th>Terc content</th>
+      <th>Recompany</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @redescriptions.each do |redescription| %>
+      <tr>
+        <td><%= redescription.image %></td>
+        <td><%= redescription.ppal_title %></td>
+        <td><%= redescription.ppal_content %></td>
+        <td><%= redescription.second_title %></td>
+        <td><%= redescription.second_content %></td>
+        <td><%= redescription.terc_title %></td>
+        <td><%= redescription.terc_content %></td>
+        <td><%= redescription.recompany %></td>
+        <td><%= link_to 'Show', redescription %></td>
+        <td><%= link_to 'Edit', edit_redescription_path(redescription) %></td>
+        <td><%= link_to 'Destroy', redescription, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Redescription', new_redescription_path %>

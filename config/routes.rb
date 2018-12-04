@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :redescriptions
   resources :projects
 #  get 'recompanies', to: 'recompanies#index'
   get 'companies', to: 'companies#index'
