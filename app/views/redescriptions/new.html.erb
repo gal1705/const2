@@ -1,5 +1,45 @@
 <h1>New Redescription</h1>
 
-<%= render 'form', redescription: @redescription %>
+<%= form_with(url: recompany_redescriptions_path, scope: :redescription, model: [@recompany, @redescription], local: true) do |form| %>
 
-<%= link_to 'Back', redescriptions_path %>
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.text_field :image %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ppal_title %>
+    <%= form.text_field :ppal_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ppal_content %>
+    <%= form.text_area :ppal_content %>
+  </div>
+
+  <div class="field">
+    <%= form.label :second_title %>
+    <%= form.text_field :second_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :second_content %>
+    <%= form.text_area :second_content %>
+  </div>
+
+  <div class="field">
+    <%= form.label :terc_title %>
+    <%= form.text_field :terc_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :terc_content %>
+    <%= form.text_area :terc_content %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+<%= link_to 'Back', recompany_path(id: params[:recompany_id]) %>

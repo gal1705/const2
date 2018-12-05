@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :redescriptions
+  # resources :redescriptions
   resources :projects
 #  get 'recompanies', to: 'recompanies#index'
   get 'companies', to: 'companies#index'
@@ -15,7 +15,9 @@ Rails.application.routes.draw do
     registrations: 'companies/registrations'
   }
 
-  resources :recompanies, only: [:index, :show]
+  resources :recompanies, only: [:index, :show] do
+    resource :redescriptions
+  end
 
   resources :categories
   root to: 'categories#index'

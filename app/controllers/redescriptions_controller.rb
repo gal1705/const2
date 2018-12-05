@@ -14,6 +14,7 @@ class RedescriptionsController < ApplicationController
 
   # GET /redescriptions/new
   def new
+    @recompany = Recompany.find(params[:recompany_id])
     @redescription = Redescription.new
   end
 
@@ -24,15 +25,22 @@ class RedescriptionsController < ApplicationController
   # POST /redescriptions
   # POST /redescriptions.json
   def create
-    @redescription = Redescription.new(redescription_params)
+    @redescription = Redescription.new(redescription_params2)
+    @redescription.recompany_id = redescription_params[:recompany_id]
 
-    respond_to do |format|
-      if @redescription.save
-        format.html { redirect_to @redescription, notice: 'Redescription was successfully created.' }
-        format.json { render :show, status: :created, location: @redescription }
-      else
-        format.html { render :new }
-        format.json { render json: @redescription.errors, status: :unprocessable_entity }
+    if Recompany.find(params[:recompany_id]).redescription != nil
+      respond_to do |format|
+        format.html { redirect_to recompany_path(@redescription.recompany_id), notice: 'No se puede guardar, ya existe una descripción' }
+      end
+    else
+      respond_to do |format|
+        if @redescription.save
+          format.html { redirect_to recompany_path(@redescription.recompany_id), notice: 'Redescription was successfully created.' }
+          format.json { render :show, status: :created, location: @redescription }
+        else
+          format.html { render :new }
+          format.json { render json: @redescription.errors, status: :unprocessable_entity }
+        end
       end
     end
   end
@@ -69,6 +77,13 @@ class RedescriptionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def redescription_params
-      params.require(:redescription).permit(:image, :ppal_title, :ppal_content, :second_title, :second_content, :terc_title, :terc_content, :recompany_id)
+      # params.require(:redescription).permit(:image, :ppal_title, :ppal_content, :second_title, :second_content, :terc_title, :terc_content, :redescription => [:image, :ppal_title, :ppal_content, :second_title, :second_content, :terc_title, :terc_content])
+      params.permit(:recompany_id)
     end
+
+    def redescription_params2
+      params.require(:redescription).permit(:image, :ppal_title, :ppal_content, :second_title, :second_content, :terc_title, :terc_content)
+    end
+
+
 end

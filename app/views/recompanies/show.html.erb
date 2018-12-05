@@ -1,5 +1,24 @@
 <p id="notice"><%= notice %></p>
 
+<% if @recompany.logo.url.present? %>
+<%=link_to( image_tag(@recompany.logo.url, size:"240x240", class:"img-fluid d-block"), @recompany) %>
+<% else %>
+<%= image_tag "http://placehold.it/640x480", class:"img-fluid d-block" %>
+<% end %>
+
+<br>
+
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link active" href="#">Nuestros Proyectos</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Empresa</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Contacto</a>
+  </li>
+</ul>
 
 <br>
 <h1>Proyectos</h1>

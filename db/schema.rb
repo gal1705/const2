@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_07_145114) do
+ActiveRecord::Schema.define(version: 2018_12_04_194136) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -111,8 +111,23 @@ ActiveRecord::Schema.define(version: 2018_11_07_145114) do
     t.index ["reset_password_token"], name: "index_recompanies_on_reset_password_token", unique: true
   end
 
+  create_table "redescriptions", force: :cascade do |t|
+    t.string "image"
+    t.string "ppal_title"
+    t.text "ppal_content"
+    t.string "second_title"
+    t.text "second_content"
+    t.string "terc_title"
+    t.text "terc_content"
+    t.bigint "recompany_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["recompany_id"], name: "index_redescriptions_on_recompany_id"
+  end
+
   add_foreign_key "companies", "categories"
   add_foreign_key "project_companies", "companies"
   add_foreign_key "project_companies", "projects"
   add_foreign_key "projects", "recompanies"
+  add_foreign_key "redescriptions", "recompanies"
 end
