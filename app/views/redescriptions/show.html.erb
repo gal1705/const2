@@ -1,44 +1,61 @@
 <p id="notice"><%= notice %></p>
 
+<% if @recompany.logo.url.present? %>
+<%=link_to( image_tag(@recompany.logo.url, size:"240x240", class:"img-fluid d-block"), @recompany) %>
+<% else %>
+<%= image_tag "http://placehold.it/640x480", class:"img-fluid d-block" %>
+<% end %>
+
+<br>
+
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link" href="<%= recompany_path(id: params[:recompany_id]) %>">Nuestros Proyectos</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" href="#">Empresa</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="<%= contact_recompany_path(@recompany) %>">Contacto</a>
+  </li>
+</ul>
+
+<br>
+
+
+<div class=""><%= image_tag "construction-team", class:"img-fluid d-block" %>
+
+</div>
+
+<div class="py-5" >
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10">
+        <h1 class="mb-3"><%= @redescription.ppal_title %></h1>
+        <p><%= @redescription.ppal_content %></p>
+        <br>
+        <h1 class="mb-3"><%= @redescription.second_title %></h1>
+        <p><%= @redescription.second_content %></p>
+        <br>
+        <h1 class="mb-3"><%= @redescription.terc_title %></h1>
+        <p><%= @redescription.terc_content %></p>
+
+
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <p>
   <strong>Image:</strong>
   <%= @redescription.image %>
 </p>
 
-<p>
-  <strong>Ppal title:</strong>
-  <%= @redescription.ppal_title %>
-</p>
 
-<p>
-  <strong>Ppal content:</strong>
-  <%= @redescription.ppal_content %>
-</p>
 
-<p>
-  <strong>Second title:</strong>
-  <%= @redescription.second_title %>
-</p>
 
-<p>
-  <strong>Second content:</strong>
-  <%= @redescription.second_content %>
-</p>
-
-<p>
-  <strong>Terc title:</strong>
-  <%= @redescription.terc_title %>
-</p>
-
-<p>
-  <strong>Terc content:</strong>
-  <%= @redescription.terc_content %>
-</p>
-
-<p>
-  <strong>Recompany:</strong>
-  <%= @redescription.recompany %>
-</p>
-
-<%= link_to 'Edit', edit_redescription_path(@redescription) %> |
-<%= link_to 'Back', redescriptions_path %>
+<%= link_to 'Edit', "" %> |
+<%= link_to 'Back', recompany_path(id: params[:recompany_id]) %>

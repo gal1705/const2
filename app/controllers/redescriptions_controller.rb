@@ -14,7 +14,7 @@ class RedescriptionsController < ApplicationController
 
   # GET /redescriptions/new
   def new
-    @recompany = Recompany.find(params[:recompany_id])
+    # @recompany = Recompany.find(params[:recompany_id])
     @redescription = Redescription.new
   end
 
@@ -72,7 +72,8 @@ class RedescriptionsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_redescription
-      @redescription = Redescription.find(params[:id])
+      @recompany = Recompany.find(params[:recompany_id])
+      @redescription = @recompany.redescription
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

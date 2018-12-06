@@ -17,6 +17,9 @@ Rails.application.routes.draw do
 
   resources :recompanies, only: [:index, :show] do
     resource :redescriptions
+    member do
+      get 'contact'
+    end
   end
 
   resources :categories
