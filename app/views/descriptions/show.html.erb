@@ -1,0 +1,61 @@
+<p id="notice"><%= notice %></p>
+
+<% if @company.logo.url.present? %>
+<%=link_to( image_tag(@company.logo.url, size:"240x240", class:"img-fluid d-block"), @company) %>
+<% else %>
+<%= image_tag "http://placehold.it/640x480", class:"img-fluid d-block" %>
+<% end %>
+
+<br>
+
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link" href="<%= company_path(id: params[:company_id]) %>">Nuestros Proyectos</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" href="#">Empresa</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="<%= contact_company_path(@company) %>">Contacto</a>
+  </li>
+</ul>
+
+<br>
+
+
+<div class=""><%= image_tag "construction-team", class:"img-fluid d-block" %>
+
+</div>
+
+<div class="py-5" >
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10">
+        <h1 class="mb-3"><%= @description.ppal_title %></h1>
+        <p><%= @description.ppal_content %></p>
+        <br>
+        <h1 class="mb-3"><%= @description.second_title %></h1>
+        <p><%= @description.second_content %></p>
+        <br>
+        <h1 class="mb-3"><%= @description.terc_title %></h1>
+        <p><%= @description.terc_content %></p>
+
+
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<p>
+  <strong>Image:</strong>
+  <%= @description.image %>
+</p>
+
+
+
+
+<%= link_to 'Edit', "" %> |
+<%= link_to 'Back', company_path(id: params[:company_id]) %>

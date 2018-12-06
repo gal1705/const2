@@ -1,0 +1,57 @@
+<%= form_with(model: description, local: true) do |form| %>
+  <% if description.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(description.errors.count, "error") %> prohibited this description from being saved:</h2>
+
+      <ul>
+      <% description.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.text_field :image %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ppal_title %>
+    <%= form.text_field :ppal_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ppal_content %>
+    <%= form.text_area :ppal_content %>
+  </div>
+
+  <div class="field">
+    <%= form.label :second_title %>
+    <%= form.text_field :second_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :second_content %>
+    <%= form.text_area :second_content %>
+  </div>
+
+  <div class="field">
+    <%= form.label :terc_title %>
+    <%= form.text_field :terc_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :terc_content %>
+    <%= form.text_area :terc_content %>
+  </div>
+
+  <div class="field">
+    <%= form.label :company_id %>
+    <%= form.text_field :company_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

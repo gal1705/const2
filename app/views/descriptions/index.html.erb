@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Descriptions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>Ppal title</th>
+      <th>Ppal content</th>
+      <th>Second title</th>
+      <th>Second content</th>
+      <th>Terc title</th>
+      <th>Terc content</th>
+      <th>Company</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @descriptions.each do |description| %>
+      <tr>
+        <td><%= description.image %></td>
+        <td><%= description.ppal_title %></td>
+        <td><%= description.ppal_content %></td>
+        <td><%= description.second_title %></td>
+        <td><%= description.second_content %></td>
+        <td><%= description.terc_title %></td>
+        <td><%= description.terc_content %></td>
+        <td><%= description.company %></td>
+        <td><%= link_to 'Show', description %></td>
+        <td><%= link_to 'Edit', edit_description_path(description) %></td>
+        <td><%= link_to 'Destroy', description, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Description', new_description_path %>

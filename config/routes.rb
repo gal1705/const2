@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
+  # resources :descriptions
   # resources :redescriptions
   resources :projects
 #  get 'recompanies', to: 'recompanies#index'
-  get 'companies', to: 'companies#index'
+#  get 'companies', to: 'companies#index'
 #  get 'companies/architects', to: 'companies#index'
 
   devise_for :recompanies, path: 'recompanies', controllers: {
@@ -17,6 +18,13 @@ Rails.application.routes.draw do
 
   resources :recompanies, only: [:index, :show] do
     resource :redescriptions
+    member do
+      get 'contact'
+    end
+  end
+
+  resources :companies, only: [:index, :show] do
+    resource :description
     member do
       get 'contact'
     end

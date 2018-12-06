@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  image: MyString
+  ppal_title: MyString
+  ppal_content: MyText
+  second_title: MyString
+  second_content: MyText
+  terc_title: MyString
+  terc_content: MyText
+  company: one
+
+two:
+  image: MyString
+  ppal_title: MyString
+  ppal_content: MyText
+  second_title: MyString
+  second_content: MyText
+  terc_title: MyString
+  terc_content: MyText
+  company: two

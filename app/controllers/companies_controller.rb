@@ -7,4 +7,14 @@ class CompaniesController < ApplicationController
       @companies = Company.where(category_id: @category_id).order("created_at ASC")
     end
   end
+
+  def show
+    @company = Company.find(params[:id])
+  	# @projects = Project.where(recompany_id: params[:id]).order("created_at ASC")
+  end
+
+  def contact
+    @company = Company.find(params[:id])
+  end
+
 end

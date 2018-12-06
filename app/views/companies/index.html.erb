@@ -6,10 +6,10 @@
   <div class="py-5">
     <div class="container">
       <div class="row">
-        <div class="col-md-6"> 
+        <div class="col-md-6">
 
           <% if company.logo.url.present? %>
-          <%= image_tag company.logo.url, size:"240x240", class:"img-fluid d-block" %>
+          <%=link_to( image_tag(company.logo.url, size:"240x240", class:"img-fluid d-block"), company) %>
           <% else %>
           <%= image_tag "http://placehold.it/640x480", class:"img-fluid d-block" %>
           <% end %>
