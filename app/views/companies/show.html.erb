@@ -21,8 +21,39 @@
 </ul>
 
 <br>
-<h1>Proyectos</h1>
+<br>
+<div class="py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7">
+        <div class="text-center mx-auto col-lg-12 col-10">
+          <div id="carousel1" class="carousel slide carousel-fade" data-ride="carousel" data-interval="5000">
+            <div class="carousel-inner">
+              <div class="carousel-item active"> <%= image_tag "portfolio-1", class:"d-block w-100" %> </div>
+              <div class="carousel-item"> <%= image_tag "portfolio-2", class:"d-block w-100" %> </div>
+              <div class="carousel-item"> <%= image_tag "portfolio-3", class:"d-block w-100" %> </div>
+              <div class="carousel-item"> <%= image_tag "portfolio-4", class:"d-block w-100" %> </div>
+            </div>
+            <ol class="carousel-indicators">
+              <li data-target="#carousel1" data-slide-to="0" class="active"> </li>
+              <li data-target="#carousel1" data-slide-to="1"> </li>
+              <li data-target="#carousel1" data-slide-to="2"> </li>
+              <li data-target="#carousel1" data-slide-to="3"> </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-1">
 
+      </div>
+      <div class="col-md-4">
+        <h2 class="mb-4">Nuestra Experiencia</h2>
+        <p>En este espacio puedes ver una muestra de nuestra vasta experiencia en construcción. <br> <br>Estamos abiertos a nuevos desafíos, contáctanos y haznos partícipes de tus proyectos.</p>
+
+      </div>
+    </div>
+  </div>
+</div>
 
 
 <%= link_to 'New Project', new_project_path %>
