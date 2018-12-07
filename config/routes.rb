@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
+  get 'homes/index'
   # resources :descriptions
   # resources :redescriptions
   resources :projects
+
 #  get 'recompanies', to: 'recompanies#index'
 #  get 'companies', to: 'companies#index'
 #  get 'companies/architects', to: 'companies#index'
@@ -31,6 +33,6 @@ Rails.application.routes.draw do
   end
 
   resources :categories
-  root to: 'categories#index'
+  root to: 'homes#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

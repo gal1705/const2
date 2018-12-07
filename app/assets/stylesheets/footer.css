@@ -1,0 +1,17 @@
+.footer {
+  background-color: #373D42;
+  color: white;
+  padding: 0;
+
+}
+
+.text-dark {
+  color: white !important; }
+
+a.text-dark:hover, a.text-dark:focus {
+  color: #15151 !important; }
+
+.p-4 {
+  padding-bottom: 0;
+  height: 205px;
+}

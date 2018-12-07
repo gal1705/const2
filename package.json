@@ -1,5 +1,8 @@
 {
   "name": "const2",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "bootstrap": "^4.1.3",
+    "jquery-backstretch": "^2.1.17"
+  }
 }
