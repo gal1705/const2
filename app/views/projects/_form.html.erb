@@ -18,7 +18,7 @@
 
   <div class="field">
     <%= form.label :role %>
-    <%= form.number_field :role %>
+    <%= form.select :role, options_for_select(Project.roles) %>
   </div>
 
   <div class="field">
@@ -154,7 +154,7 @@
 <% i = 1 %>
 
 <%= form.fields_for :project_companies do |projectcompany_form| %>
-  
+
   <% if i == 1 %>
 
     <div class="field">
@@ -167,7 +167,7 @@
     <%= projectcompany_form.label :Ingeniero %>
     <%= projectcompany_form.select :company_id, Company.where(category_id: 2).order("created_at ASC").map{|cat| [cat.name, cat.id]} %>
     </div>
-    
+
   <% else %>
     <div class="field">
     <%= projectcompany_form.label :Constructora %>

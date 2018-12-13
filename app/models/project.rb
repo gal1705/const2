@@ -5,4 +5,5 @@ class Project < ApplicationRecord
   accepts_nested_attributes_for :project_companies,
   reject_if: lambda { |attributes| attributes['company_id'].blank? }
   mount_uploader :main_image, MainImageUploader
+  enum role: [:casa, :departamento]
 end
