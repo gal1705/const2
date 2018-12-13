@@ -66,13 +66,15 @@ class ProjectsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    
+
     # def set_project
     #  @project = Project.find(params[:id])
     # end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
-      params.require(:project).permit(:name, :role, :project_address, :showroom_address, :showroom_telephone, :opening_hours, :description, :characteristics, :main_image, :barbecue_area, :gym, :pool, :multipurpose_room, :laundry_room, :controlled_access, :visitors_parking, :play_area, :club_house, :games_room, :green_areas, :bike_parking, :parking, :warehouses, :arch_finishes, :inmediate_availability, :availability_date, :number_of_buildings, :number_of_floors, project_companies_attributes: [:company_id])
+      pp = params.require(:project).permit(:name, :project_address, :showroom_address, :showroom_telephone, :opening_hours, :description, :characteristics, :main_image, :barbecue_area, :gym, :pool, :multipurpose_room, :laundry_room, :controlled_access, :visitors_parking, :play_area, :club_house, :games_room, :green_areas, :bike_parking, :parking, :warehouses, :arch_finishes, :inmediate_availability, :availability_date, :number_of_buildings, :number_of_floors, project_companies_attributes: [:company_id])
+      pp[:role] = params[:project][:role].to_i
+      return pp
     end
 end
