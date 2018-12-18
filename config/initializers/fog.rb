@@ -4,7 +4,7 @@ if Rails.env.development? or Rails.env.test?
     config.enable_processing = false
   end
 
-else
+elsif Rails.env.production?
   CarrierWave.configure do |config|
     config.fog_provider = 'fog/aws'                        # required
     config.fog_credentials = {
