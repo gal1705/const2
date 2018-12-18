@@ -7,7 +7,7 @@ class RecompaniesLogoUploader < CarrierWave::Uploader::Base
   # storage :file
   if Rails.env.development? or Rails.env.test?
     storage :file
-  else
+  elsif Rails.env.production?
     storage :fog
   end
 

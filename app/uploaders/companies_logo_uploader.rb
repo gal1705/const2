@@ -6,7 +6,7 @@ class CompaniesLogoUploader < CarrierWave::Uploader::Base
   # Choose what kind of storage to use for this uploader:
   if Rails.env.development? or Rails.env.test?
     storage :file
-  else
+  elsif Rails.env.production?
     storage :fog
   end
   # Override the directory where uploaded files will be stored.
