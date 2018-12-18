@@ -11,7 +11,7 @@ elsif Rails.env.production?
       provider:              'AWS',                        # required
       aws_access_key_id:     ENV['AWS_KEY_CARRIERWAVE'],                        # required unless using use_iam_profile
       aws_secret_access_key: ENV['AWS_SECRET_CARRIERWAVE'],                        # required unless using use_iam_profile
-      use_iam_profile:       true,                         # optional, defaults to false
+      # use_iam_profile:       true,                         # optional, defaults to false
       region:                'sa-east-1',                  # optional, defaults to 'us-east-1'
       # host:                  's3.example.com',             # optional, defaults to nil
       # endpoint:              'https://s3.example.com:8080' # optional, defaults to nil
