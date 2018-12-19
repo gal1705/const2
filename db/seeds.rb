@@ -32,4 +32,7 @@ end
  Recompany.create!(name: "Inmobilia #{i+1}", email:"inmobilia#{i+1}@gmail.com", password: '123456', password_confirmation: '123456')
 end
 
-Recompany.create!(name: "Inmobiliaria Remote", email:"remote@gmail.com", password: '123456', password_confirmation: '123456', remote_logo_url: 'https://www.curiosfera.com/wp-content/uploads/2017/12/d%C3%B3nde-viven-las-ovejas.jpg' )
+Recompany.create!(name: "Inmobiliaria Remote1", email:"remote1@gmail.com", password: '123456', password_confirmation: '123456', remote_logo_url: 'https://www.curiosfera.com/wp-content/uploads/2017/12/d%C3%B3nde-viven-las-ovejas.jpg' )
+Recompany.create!(name: "Inmobiliaria Remote2", email:"remote2@gmail.com", password: '123456', password_confirmation: '123456', remote_logo_url: 'https://s3-sa-east-1.amazonaws.com/const1748seed/seeds/caballo1.jpg' )
+Recompany.create!(name: "Inmobiliaria Remote3", email:"remote3@gmail.com", password: '123456', password_confirmation: '123456', remote_logo_url: 'https://s3-sa-east-1.amazonaws.com/const1748seed/seeds/caballo2.jpeg' )
+Recompany.create!(name: "Inmobiliaria Remote4", email:"remote4@gmail.com", password: '123456', password_confirmation: '123456', remote_logo_url: 'https://s3-sa-east-1.amazonaws.com/const1748seed/seeds/caballo3.jpg' )
