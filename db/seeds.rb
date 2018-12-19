@@ -31,3 +31,5 @@ end
 3.times do |i|
  Recompany.create!(name: "Inmobilia #{i+1}", email:"inmobilia#{i+1}@gmail.com", password: '123456', password_confirmation: '123456')
 end
+
+Recompany.create!(name: "Inmobiliaria Remote", email:"remote@gmail.com", password: '123456', password_confirmation: '123456', remote_logo_url: 'https://www.curiosfera.com/wp-content/uploads/2017/12/d%C3%B3nde-viven-las-ovejas.jpg' )
